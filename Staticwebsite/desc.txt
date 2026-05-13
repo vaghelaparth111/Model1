@@ -1,0 +1,6 @@
+login page
+registration page
+home page
+category page
+product details page
+contact us

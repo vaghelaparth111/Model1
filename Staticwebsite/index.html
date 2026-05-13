@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            background-color: #ff5757;
+            color: white;
+            padding: 10px 0;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            display: flex;
+            padding: 20px;
+        }
+        .slider {
+            display: flex;
+            background: radial-gradient(#fff, #ffd6d6,#ff523b);
+            border-radius: 15px;
+            overflow-x: auto;
+            overflow: hidden;
+            scroll-snap-type: x mandatory;
+        }
+        .slide-content {
+            display: flex;
+            flex-shrink: 0;
+            width: 100%;
+            scroll-snap-align: start;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: slideAnimation 15s infinite;
+        }
+        .slide-content .left {
+            flex: 1;
+            margin-top: 80px;
+            padding: 20px 20px 20px 100px;
+        }
+        .slide-content .right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide-content img{
+            width: 300px;
+        }
+        @keyframes slideAnimation {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Static Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="category.html">Category</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="slider">
+            <div slide="1" class="slide-content">
+                <div class="left">
+                    <h2>Welcome to our Static Website</h2>
+                    <p>This is a simple static website built with HTML & CSS.</p>
+                </div>
+                <div class="right">
+                    <img src="images/pngwing.com.png" alt="Placeholder Image">
+                </div>
+            </div>
+            <div slide="2" class="slide-content">
+                <div class="left">
+                    <h2>Welcome to our Static Website</h2>
+                    <p>This is a simple static website built with HTML & CSS.</p>
+                </div>
+                <div class="right">
+                    <img src="images/pngwing.com.png" alt="Placeholder Image">
+                </div>
+            </div>
+            <div slide="3" class="slide-content">
+                <div class="left">
+                    <h2>Welcome to our Static Website</h2>
+                    <p>This is a simple static website built with HTML & CSS.</p>
+                </div>
+                <div class="right">
+                    <img src="images/pngwing.com.png" alt="Placeholder Image">
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
