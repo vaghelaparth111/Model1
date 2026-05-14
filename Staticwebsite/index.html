@@ -5,92 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Static Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        main {
-            display: flex;
-            padding: 20px;
-        }
-        .slider {
-            display: flex;
-            background: radial-gradient(#fff, #ffd6d6,#ff5757);
-            border-radius: 15px;
-            overflow-x: auto;
-            overflow: hidden;
-            scroll-snap-type: x mandatory;
-        }
-        .slide-content {
-            display: flex;
-            flex-shrink: 0;
-            width: 100%;
-            scroll-snap-align: start;
-            padding: 20px;
-            box-sizing: border-box;
-            animation: slideAnimation 15s infinite;
-        }
-        .slide-content .left {
-            flex: 1;
-            margin-top: 80px;
-            padding: 20px 20px 20px 100px;
-        }
-        .slide-content .right {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .slide-content img{
-            width: 300px;
-        }
-        @keyframes slideAnimation {
-            0% { transform: translateX(0); }
-            33% { transform: translateX(-100%); }
-            66% { transform: translateX(-200%); }
-            100% { transform: translateX(0); }
-        }
-    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <link rel="import" href="header.html">
-    </header>
+    <div id="header"> </div>
+
+
     <main>
         <section class="slider">
-            <div slide="1" class="slide-content">
-                <div class="left">
-                    <h2>Welcome to our Static Website</h2>
-                    <p>This is a simple static website built with HTML & CSS.</p>
+            <div class="slide">
+                <div slide="1" class="slide-content">
+                    <img src="images/slide1.jpg" alt="Placeholder Image">
                 </div>
-                <div class="right">
-                    <img src="images/pngwing.com.png" alt="Placeholder Image">
+                <div slide="2" class="slide-content">
+                    <img src="images/slide2.jpg" alt="Placeholder Image">
                 </div>
-            </div>
-            <div slide="2" class="slide-content">
-                <div class="left">
-                    <h2>Welcome to our Static Website</h2>
-                    <p>This is a simple static website built with HTML & CSS.</p>
-                </div>
-                <div class="right">
-                    <img src="images/pngwing.com.png" alt="Placeholder Image">
+                <div slide="3" class="slide-content">
+                    <img src="images/slide3.jpg" alt="Placeholder Image">
                 </div>
             </div>
-            <div slide="3" class="slide-content">
-                <div class="left">
-                    <h2>Welcome to our Static Website</h2>
-                    <p>This is a simple static website built with HTML & CSS.</p>
-                </div>
-                <div class="right">
-                    <img src="images/pngwing.com.png" alt="Placeholder Image">
-                </div>
+            <div class="navigation">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
             </div>
         </section>
     </main>
+
+
+    <div id="footer"></div>
 </body>
 
 </html>
